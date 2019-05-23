@@ -6,6 +6,7 @@ export const Intern = mongoose.model('Intern', {
     skills:String,
     age:Number,
     dob:String,
+    role:String
  });
 
 module.exports = Intern;
