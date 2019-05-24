@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
 
-
-export const Intern = mongoose.model('Intern', { 
+const intern_schema = new mongoose.Schema(
+	{ 
     name: String ,
     skills:String,
     age:Number,
     dob:String,
     role:String
- });
+});
+
+const Intern = mongoose.model('Intern',intern_schema );
 
 module.exports = Intern;

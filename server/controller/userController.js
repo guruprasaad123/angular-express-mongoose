@@ -10,7 +10,7 @@ const getAll = async (req,res)=>{
     }
     catch(err)
     {
-        err.status(400).json({error:err.message});
+        res.status(400).json({error:err.message});
     }
     };
     
@@ -21,7 +21,7 @@ const getAll = async (req,res)=>{
         }
         catch(err)
         {
-            err.status(400).json({error:err.message});
+            res.status(400).json({error:err.message});
         }
     };
     
@@ -32,18 +32,23 @@ const getAll = async (req,res)=>{
         }
         catch(err)
         {
-            err.status(400).json({error:err.message});
+            res.status(400).json({error:err.message});
         }
     };
     
     const insert = async (req,res)=>{
         try{
+            //console.log('req',req.body);
+          //  console.log('req params',req.params);
+            //console.log('req whole ',req);
+
             const response = await new User(req.body).save();
+            console.log('insert',response);
             res.status(200).json(response);
         }
         catch(err)
         {
-            err.status(400).json({error:err.message});
+            res.status(400).json({error:err.message});
         }
     };
     
@@ -70,7 +75,9 @@ const getAll = async (req,res)=>{
     }
     
  const  login = (req, res) => {
-    this.model.findOne({ email: req.body.email }, (err, user) => {
+     console.log('login > email',req.body.email);
+
+    User.findOne({ email: req.body.email }, (err, user) => {
       if (!user) { return res.sendStatus(403); }
       user.comparePassword(req.body.password, (error, isMatch) => {
         if (!isMatch) { return res.sendStatus(403); }
@@ -78,6 +85,7 @@ const getAll = async (req,res)=>{
         res.status(200).json({ token: token });
       });
     });
+
   }
 
     
