@@ -1,0 +1,49 @@
+[
+  { 
+    "name": "jiiva V",
+    "skills":["React.js","Vue.js","Node.js"],
+    "age":21,
+    "dob":"21-04-1997",
+    "role":"Fullstack Developer"
+},
+  { 
+    "name": "Gopinathan G",
+    "skills":["java"],
+    "age":22,
+    "dob":"01-06-1996",
+    "role":"java Developer"
+},
+ { 
+    "name": "Ramesh Kumar R",
+    "skills":["java"],
+    "age":21,
+    "dob":"11-09-1997",
+    "role":"java Developer"
+},
+ { 
+    "name": "jagadeshan R",
+    "skills":["bigdata"],
+    "age":21,
+    "dob":"30-12-1997",
+    "role":"data Analyst"
+}
+,
+ { 
+    "name": "harivenkat R",
+    "skills":["sap"],
+    "age":21,
+    "dob":"01-06-1997",
+    "role":"sap database administrator"
+}
+
+
+
+
+
+
+
+
+
+
+
+]

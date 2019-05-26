@@ -10,28 +10,28 @@ export class InternService {
   constructor(private http: HttpClient) { }
 
 
-  getInterns(): Observable<Intern[]> {
-    return this.http.get<Intern[]>('/api/Interns');
+  getAll(): Observable<Intern[]> {
+    return this.http.get<Intern[]>('/api/interns');
   }
 
-  countInterns(): Observable<number> {
-    return this.http.get<number>('/api/Interns/count');
+  count(): Observable<number> {
+    return this.http.get<number>('/api/interns/count');
   }
 
-  addIntern(intern: Intern): Observable<Intern> {
-    return this.http.post<Intern>('/api/Intern', intern);
+  add(intern: Intern): Observable<Intern> {
+    return this.http.post<Intern>('/api/intern', intern);
   }
 
-  getIntern(intern: Intern): Observable<Intern> {
-    return this.http.get<Intern>(`/api/Intern/${intern._id}`);
+  get(intern: Intern): Observable<Intern> {
+    return this.http.get<Intern>(`/api/intern/${intern._id}`);
   }
 
-  editIntern(intern: Intern): Observable<any> {
-    return this.http.put(`/api/Intern/${intern._id}`, intern, { responseType: 'text' });
+  edit(intern: Intern): Observable<any> {
+    return this.http.put(`/api/intern/${intern._id}`, intern, { responseType: 'text' });
   }
 
-  deleteIntern(intern: Intern): Observable<any> {
-    return this.http.delete(`/api/Intern/${intern._id}`, { responseType: 'text' });
+  delete(intern: Intern): Observable<any> {
+    return this.http.delete(`/api/intern/${intern._id}`, { responseType: 'text' });
   }
 
 }

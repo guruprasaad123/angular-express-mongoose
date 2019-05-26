@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const intern_schema = new mongoose.Schema(
 	{ 
     name: String ,
-    skills:String,
+    skills:[String],
     age:Number,
     dob:String,
     role:String

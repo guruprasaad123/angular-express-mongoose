@@ -1,0 +1,41 @@
+<h1>
+Interns 
+</h1>
+
+<table *ngIf="interns" class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">DOB</th>
+      <th scope="col">Skills</th>
+      <th scope="col">Role</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let intern of interns;index as i;">
+      <th scope="row">
+      {{i}}
+      </th>
+      <td>{{intern.name}}</td>
+      <td>{{intern.age | date}}</td>
+       <td>{{intern.dob}}</td>
+      <td>{{intern.skills}}</td>
+       <td>{{intern.role}}</td>
+  
+
+      <td>
+      
+      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group mr-2" role="group" aria-label="First group">
+    <button type="button" class="btn btn-primary">Edit</button>
+    <button type="button" class="btn btn-secondary">Delete</button>
+  </div>
+  </div>
+
+      </td>
+    </tr>
+     </tbody>
+</table>

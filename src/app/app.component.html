@@ -8,12 +8,12 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">interns</a>
+        <a class="nav-link" routerLink="/interns">interns</a>
       </li>
 
     </ul>
 
- <form class="form-inline">
+ <form *ngIf="!authentication" class="form-inline">
    
     <button class="btn btn-sm btn-outline-secondary" (click)="auth()" type="button">Authenticate</button>
   </form>
