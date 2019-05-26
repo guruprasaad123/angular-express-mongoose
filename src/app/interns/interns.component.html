@@ -20,8 +20,8 @@ Interns
       {{i}}
       </th>
       <td>{{intern.name}}</td>
-      <td>{{intern.age | date}}</td>
-       <td>{{intern.dob}}</td>
+      <td>{{intern.age }}</td>
+       <td>{{intern.dob | date}}</td>
       <td>{{intern.skills}}</td>
        <td>{{intern.role}}</td>
   
@@ -30,8 +30,8 @@ Interns
       
       <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
   <div class="btn-group mr-2" role="group" aria-label="First group">
-    <button type="button" class="btn btn-primary">Edit</button>
-    <button type="button" class="btn btn-secondary">Delete</button>
+    <button type="button" (click)="toEdit(intern._id)" class="btn btn-primary">Edit</button>
+    <button type="button" (click)="delete(intern._id)" class="btn btn-secondary">Delete</button>
   </div>
   </div>
 

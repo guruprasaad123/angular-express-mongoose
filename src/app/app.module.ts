@@ -12,6 +12,7 @@ import {AboutComponent} from './about/about.component';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {InternsComponent} from './interns/interns.component';
+import { InternEditComponent } from './intern-edit/intern.edit.component';
 
 import {AuthService} from './services/auth.service';
 import {InternService} from './services/intern.service';
@@ -29,7 +30,8 @@ export function tokenGetter() {
     AboutComponent,
     LoginComponent,
     RegisterComponent,
-    InternsComponent
+    InternsComponent,
+    InternEditComponent 
   ],
   imports: [
     NgbModule,

@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 
 import { InternService } from '../services/intern.service';
 import { Intern } from '../intern.model';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -12,6 +13,29 @@ styleUrls: ['./intern.edit.component.scss']
 }
 )
 export class InternEditComponent implements OnInit{
+
+internform:FormGroup;
+name=new FormControl('',[
+    Validators.required,
+    Validators.min(5),
+    Validators.max(100)
+]);
+age=new FormControl('',[
+    Validators.required,
+    
+]);
+dob=new FormControl('',[
+    Validators.required,
+    
+]);
+skills = new FormControl('',[
+    Validators.required,
+    
+]);
+role = new FormControl('',[
+    Validators.required,
+    
+]);
 
 intern:Intern;
 _id:any;
@@ -32,6 +56,11 @@ _id:any;
         })
           });
       
-	}
+    }
+    
+    submit()
+    {
+        this.internform.value;
+    }
 
 }

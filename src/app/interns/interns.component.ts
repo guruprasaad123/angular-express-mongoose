@@ -27,4 +27,13 @@ interns:Intern[];
 		});
 	}
 
+	toEdit(id:any)
+	{
+		this.route.navigate([`edit`,id])
+	}
+
+	delete(id:any)
+	{
+
+	}
 }
