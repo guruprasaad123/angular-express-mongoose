@@ -59,7 +59,7 @@ const getAll = async (req,res)=>{
         }
         catch(err)
         {
-            err.status(400).json({error:err.message});
+            res.status(400).json({error:err.message});
         }
     };
     
@@ -70,7 +70,7 @@ const getAll = async (req,res)=>{
         }
         catch(err)
         {
-            err.status(400).json({error:err.message});
+            res.status(400).json({error:err.message});
         }
     }
     

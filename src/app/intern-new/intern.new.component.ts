@@ -7,12 +7,12 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
-selector: 'app-intern-edit',
-templateUrl: './intern.edit.component.html',
-styleUrls: ['./intern.edit.component.scss']
+selector: 'app-intern-new',
+templateUrl: './intern.new.component.html',
+styleUrls: ['./intern.new.component.scss']
 }
 )
-export class InternEditComponent implements OnInit{
+export class InternNewComponent implements OnInit{
 
 internform:FormGroup;
 name=new FormControl('',[
@@ -52,17 +52,7 @@ dob:this.dob
 
 	ngOnInit()
 	{
-        this.route.params.subscribe(params => {
-         
-            console.log(params['id']);
-            this._id=params['id']; 
-            console.log('_id',this._id,params);
-            this.internService.get(this._id).subscribe(x=>{
-            console.log('got intern',x);
-            this.intern=x[0];
-        });
-          });
-      
+  
     }
     
     submit()
@@ -71,8 +61,9 @@ dob:this.dob
         if(value)
         {
               value.skills = value.skills.split(',');
-              value._id = this._id;
-        this.internService.edit(value).subscribe( ()=>{
+              console.log('new ',value);
+             
+        this.internService.add(value).subscribe( ()=>{
             this.router.navigate(['interns']);
         });  
         }

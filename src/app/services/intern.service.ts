@@ -22,12 +22,14 @@ export class InternService {
     return this.http.post<Intern>('/api/intern', intern);
   }
 
-  get(intern: Intern): Observable<Intern> {
-    return this.http.get<Intern>(`/api/intern/${intern._id}`);
+  get(id:string): Observable<Intern> {
+    return this.http.get<Intern>(`/api/intern/${id}`);
   }
 
   edit(intern: Intern): Observable<any> {
-    return this.http.put(`/api/intern/${intern._id}`, intern, { responseType: 'text' });
+    const _id=intern._id;
+    delete intern._id;
+    return this.http.put(`/api/intern/${_id}`, intern, { responseType: 'text' });
   }
 
   delete(intern: Intern): Observable<any> {

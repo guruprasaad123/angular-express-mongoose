@@ -8,7 +8,7 @@ const router = express.Router();
 router.route('/interns').get(internController.getAll);
 router.route('/intern/:id').get(internController.get);
 router.route('/intern/:id').put(internController.update);
-router.route('/intern/:id').post(internController.insert);
+router.route('/intern/').post(internController.insert);
 router.route('/intern/:id').delete(internController.remove);
 
 router.route('/login').post(userController.login);

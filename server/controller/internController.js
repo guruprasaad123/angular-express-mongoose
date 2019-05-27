@@ -8,7 +8,7 @@ try{
 }
 catch(err)
 {
-    err.status(400).json({error:err.message});
+    res.status(400).json({error:err.message});
 }
 };
 
@@ -19,7 +19,7 @@ const get = async (req,res)=>{
     }
     catch(err)
     {
-        err.status(400).json({error:err.message});
+        res.status(400).json({error:err.message});
     }
 };
 
@@ -30,7 +30,7 @@ const remove = async (req,res)=>{
     }
     catch(err)
     {
-        err.status(400).json({error:err.message});
+        res.status(400).json({error:err.message});
     }
 };
 
@@ -41,18 +41,19 @@ const insert = async (req,res)=>{
     }
     catch(err)
     {
-        err.status(400).json({error:err.message});
+        res.status(400).json({error:err.message});
     }
 };
 
 const update = async (req,res)=>{
     try{
-        const response = await Intern.findOneandUpdate({_id:req.params.id});
+        console.log('',req.params,req.body);
+        const response = await Intern.findOneandUpdate({_id:req.params.id},req.body);
         res.status(200).json(response);
     }
     catch(err)
     {
-        err.status(400).json({error:err.message});
+        res.status(400).json({error:err.message});
     }
 };
 
@@ -63,7 +64,7 @@ const count = async (req,res)=>{
     }
     catch(err)
     {
-        err.status(400).json({error:err.message});
+        res.status(400).json({error:err.message});
     }
 }
 

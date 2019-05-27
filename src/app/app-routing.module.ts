@@ -7,11 +7,13 @@ import { InternsComponent } from './interns/interns.component';
 
 import { AuthGuardService } from './services/auth.guard.service';
 import { InternEditComponent } from './intern-edit/intern.edit.component';
+import { InternNewComponent } from './intern-new/intern.new.component';
 
 const routes: Routes = [
 {path:'',component:AboutComponent},
 {path:'auth',component:AuthenticationComponent},
 {path:'interns',component:InternsComponent,canActivate:[AuthGuardService]},
+{path:'create',component:InternNewComponent,canActivate:[AuthGuardService]},
 {path:'edit/:id',component:InternEditComponent,canActivate:[AuthGuardService]}
 ];
 

@@ -19,6 +19,7 @@ import {InternService} from './services/intern.service';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AuthGuardService } from './services/auth.guard.service';
+import { InternNewComponent } from './intern-new/intern.new.component';
 
 export function tokenGetter() {
   return localStorage.getItem('TOKEN');
@@ -31,6 +32,7 @@ export function tokenGetter() {
     LoginComponent,
     RegisterComponent,
     InternsComponent,
+    InternNewComponent,
     InternEditComponent 
   ],
   imports: [

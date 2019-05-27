@@ -29,11 +29,17 @@ interns:Intern[];
 
 	toEdit(id:any)
 	{
-		this.route.navigate([`edit`,id])
+		this.route.navigate([`edit`,id]);
 	}
 
-	delete(id:any)
-	{
+	create(){
+		this.route.navigate(['create']);
+	}
 
+	delete(intern:Intern)
+	{
+		this.internService.delete(intern).subscribe( (x)=>{
+			console.log('Deleted ',x);
+		});
 	}
 }
