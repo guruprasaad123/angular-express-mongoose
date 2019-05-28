@@ -32,6 +32,6 @@ Intern Edit
     <input formControlName="role" type="text" class="form-control" id="role" aria-describedby="emailHelp" placeholder="{{intern.role}}">
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" [disabled]="!internform.valid" class="btn btn-primary">Submit</button>
 
 </form>

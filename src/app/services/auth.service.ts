@@ -39,6 +39,11 @@ isAuthenticated()
   return decoded;
   }
 
+  logout():void{
+    localStorage.remove('TOKEN');
+    this.user=null;
+    this.auth=false;
+  }
   login(credentials): void {
    this.http.post('/api/login', credentials).subscribe( (response: any) => {
     console.log('login token', response);

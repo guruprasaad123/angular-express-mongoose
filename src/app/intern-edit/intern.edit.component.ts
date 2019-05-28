@@ -60,6 +60,14 @@ dob:this.dob
             this.internService.get(this._id).subscribe(x=>{
             console.log('got intern',x);
             this.intern=x[0];
+            
+        this.internform.patchValue({
+            name:this.intern.name ,
+            age:this.intern.age,
+            role:this.intern.role,
+            skills:this.intern.skills.join(','),
+            dob:this.intern.dob
+        })
         });
           });
       

@@ -25,8 +25,8 @@ const get = async (req,res)=>{
 
 const remove = async (req,res)=>{
     try{
-        await Intern.findOneandRemove({_id:req.params.id});
-        res.status(200).json();
+        const response = await Intern.findOneAndRemove({_id:req.params.id});
+        res.status(200).json(response);
     }
     catch(err)
     {
@@ -47,12 +47,18 @@ const insert = async (req,res)=>{
 
 const update = async (req,res)=>{
     try{
-        console.log('',req.params,req.body);
-        const response = await Intern.findOneandUpdate({_id:req.params.id},req.body);
+        console.log('update',req.params,req.body);
+        const response = await Intern.findOneAndUpdate({_id:req.params.id},req.body,{new:true}).then(()=>{
+
+        }).catch(err=>{
+            console.log('error',err);
+            res.status(400).json({error:err.message});
+        });
         res.status(200).json(response);
     }
     catch(err)
     {
+        console.log('error catch',err);
         res.status(400).json({error:err.message});
     }
 };

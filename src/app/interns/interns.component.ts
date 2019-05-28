@@ -40,6 +40,11 @@ interns:Intern[];
 	{
 		this.internService.delete(intern).subscribe( (x)=>{
 			console.log('Deleted ',x);
+			//this.route.navigate(['interns'])
+			this.internService.getAll().subscribe(x=>{
+				console.log('interns',x);
+				this.interns=x;
+			});
 		});
 	}
 }

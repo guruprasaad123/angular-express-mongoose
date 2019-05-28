@@ -21,7 +21,7 @@ Interns
       </th>
       <td>{{intern.name}}</td>
       <td>{{intern.age }}</td>
-       <td>{{intern.dob }}</td>
+       <td>{{intern.dob | date :'mediumDate' }}</td>
       <td>{{intern.skills.join(',')}}</td>
        <td>{{intern.role}}</td>
   
