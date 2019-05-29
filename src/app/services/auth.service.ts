@@ -40,9 +40,10 @@ isAuthenticated()
   }
 
   logout():void{
-    localStorage.remove('TOKEN');
+    localStorage.removeItem('TOKEN');
     this.user=null;
     this.auth=false;
+    this.route.navigate(['/']);
   }
   login(credentials): void {
    this.http.post('/api/login', credentials).subscribe( (response: any) => {

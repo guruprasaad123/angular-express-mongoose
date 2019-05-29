@@ -11,6 +11,12 @@
         <a class="nav-link" routerLink="/interns">interns</a>
       </li>
 
+ <li *ngIf="authentication" class="nav-item">
+        <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Welcome {{user.username}}
+        </a>
+      </li>
+
     </ul>
 
  <form *ngIf="!authentication" class="form-inline">
@@ -18,15 +24,7 @@
     <button class="btn btn-sm btn-outline-secondary" (click)="auth()" type="button">Authenticate</button>
   </form>
 
-  <div *ngIf="authentication"  class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  {{user.username}}
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-    <button class="dropdown-item" (click)="logout()" type="button">Logout</button>
-
-  </div>
-</div>
+<button *ngIf="authentication" type="button" (click)="logout()" class="btn btn-primary">Logout</button>
 </nav>
 
   <router-outlet></router-outlet>
